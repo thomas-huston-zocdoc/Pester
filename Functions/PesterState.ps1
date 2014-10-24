@@ -226,7 +226,7 @@ function Write-Describe
         [Parameter(mandatory=$true, valueFromPipeline=$true)]$Name
     )
     process {
-        Write-Host Describing $Name -ForegroundColor Magenta
+        Write-Host $Name -ForegroundColor Magenta
     }
 }
 
@@ -258,7 +258,7 @@ function Write-PesterResult
         switch ($TestResult.Result)
         {
             Passed {
-                "$margin[+] $output $humanTime" | Microsoft.PowerShell.Utility\Write-Host -ForegroundColor DarkGreen
+                "$margin[+] $output $humanTime" | Microsoft.PowerShell.Utility\Write-Host -ForegroundColor Green
                 break
             }
             Failed {
