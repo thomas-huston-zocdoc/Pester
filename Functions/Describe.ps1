@@ -69,11 +69,12 @@ param(
         Tests = @()
     }
 
-    $pester.output = $pester.margin + "Describing " + $name
+    $pester.output = $pester.margin + $name
     Write-Host -ForegroundColor Magenta $($pester.output)
 	New-TestDrive
 	& $fixture
 	Remove-TestDrive
+    Write-Host
 
     $pester.Scope = "Describe" #may have been switched to context
 	Clear-Mocks
