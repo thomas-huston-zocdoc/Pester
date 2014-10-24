@@ -273,7 +273,7 @@ function Write-NUnitDescribeChildElements([object[]] $TestResults, [System.Xml.X
 
             if (-not $LegacyFormat)
             {
-                $suiteInfo.Name = "$DescribeName : $($suiteInfo.Name)"
+                $suiteInfo.Name = "$DescribeName $($suiteInfo.Name)"
             }
 
             Write-NUnitTestSuiteAttributes -TestSuiteInfo $suiteInfo -TestSuiteType 'ParameterizedTest' -XmlWriter $XmlWriter -LegacyFormat:$LegacyFormat
@@ -338,7 +338,7 @@ function Write-NUnitTestCaseAttributes($TestResult, [System.Xml.XmlWriter] $XmlW
             $testName = "$testName($paramString)"
         }
 
-        $testName = "$DescribeName : $testName"
+        $testName = "$DescribeName $testName"
 
         $XmlWriter.WriteAttributeString('description', $TestResult.Name)
     }
