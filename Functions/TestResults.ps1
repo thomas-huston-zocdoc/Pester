@@ -116,15 +116,15 @@ function Write-NUnitTestResultChildNodes($PesterState, [System.Xml.XmlWriter] $X
     Write-NUnitEnvironmentInformation @PSBoundParameters
     Write-NUnitCultureInformation @PSBoundParameters
 
-    $XmlWriter.WriteStartElement('test-suite')
-    Write-NUnitGlobalTestSuiteAttributes @PSBoundParameters
+    # $XmlWriter.WriteStartElement('test-suite')
+    # Write-NUnitGlobalTestSuiteAttributes @PSBoundParameters
 
-    $XmlWriter.WriteStartElement('results')
+    # $XmlWriter.WriteStartElement('results')
 
     Write-NUnitDescribeElements @PSBoundParameters
 
-    $XmlWriter.WriteEndElement()
-    $XmlWriter.WriteEndElement()
+    # $XmlWriter.WriteEndElement()
+    # $XmlWriter.WriteEndElement()
 }
 
 function Write-NUnitEnvironmentInformation($PesterState, [System.Xml.XmlWriter] $XmlWriter, [switch] $LegacyFormat)
